@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      alert(document.body.previousElementSibling); //head, element가 아닌 형제라면 text가 나오지만 previousELEMENTsibling임
+      alert(document.body.parentElement);
+      alert(document.body.firstElementChild);
+
+      for (let elem of document.documentElement.children) {
+        alert(elem); //html의 자녀요소는 head,body
+      }
+    </script>
+  </body>
+</html>
+<!--
+<html> = document.documentElement
+document를 제외하고 DOM 트리 꼭대기에 있는 문서 노드는, <html> 태그에 해당하는 document.documentElement입니다.
+<head>와 <body>는, <html>요소의 자식 노드입니다.
+
+<body> = document.body
+document.body는 <body> 요소에 해당하는 DOM 노드로, 자주 쓰이는 노드 중 하나입니다.
+
+<head> = document.head
+<head> 태그는 document.head로 접근할 수 있습니다.
+
+firstChild와 lastChild 프로퍼티를 이용하면 첫 번째, 마지막 자식 노드에 빠르게 접근할 수 있습니다.	///ele상관없
+document.body.childNodes컬렉션은 텍스트 노드를 포함한, 모든 자식 노드를 담고 있습니다.	//////
+		      children컬렉션은 요소노드만 담고 있습니다.
+배열 아니고 컬렉션: for..of가능, 배열 메서드 불가능
+
++table요소는 표 만들 때 사용하는데, 추가 프로퍼티 지원
+메서드에 Element 유무를 잘 확인하기(만약 그러면 요소 노드만 잡음)
+
+-->
