@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a name="list">the list</a>
+    <!--이건 그냥 a에 이상하게 써놓은 것-->
+    <ul>
+      <li><a href="http://google.com">http://google.com</a></li>
+      <li><a href="/tutorial">/tutorial.html</a></li>
+      <li><a href="local/path">local/path</a></li>
+      <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+      <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+      <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+    </ul>
+
+    <script>
+      // setting style for a single link
+
+      const links = document.querySelectorAll('a');
+
+      for (let link of links) {
+        let href = link.getAttribute('href');
+        if (!href) continue;
+        if (!href.includes('://')) continue;
+        if (href.startsWith('http://internal.com')) continue;
+
+        link.style.color = 'orange';
+      }
+    </script>
+  </body>
+</html>
+<!--
+JavaScript에서 continue는 현재 반복을 중단하고 다음 반복으로 넘어가는 역할을 합니다.
+-->
