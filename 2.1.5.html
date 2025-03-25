@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(document.body);
+      console.dir(document.body);
+
+      console.log(document.body.nodeName);
+    </script>
+  </body>
+</html>
+<!--
+노드: 계층적 단위
+DOM 노드는 종류에 따라 대응하는 내장 클래스가 다릅니다.
+
+Node는 EventTarget을, 다른 DOM 노드들은 Node 클래스를 상속받습니다.
+	=모든 노드는 이벤트타겟이 될 수 있고, 모든건 노드로 이루어짐
+
+<body> 요소에 대응하는 DOM 객체를 예로 들어봅시다. 이 객체는 HTMLBodyElement 클래스를 기반으로 만들어짐
+그러면 HTMLElement, Element,Node,EventTarget 클래스들에서 상속받은 프로퍼티와 메서드가 있을 것임
+console.dir(elem)에선 body를 객체취급하여,(log는 일반적 트리) 상속받은 그것들을 전부 보여줌
+
+
+nodeName이나 tagName 프로퍼티를 사용하면, DOM 노드의 태그 이름을 알아낼 수 있습니다.
+
+innerHTML 프로퍼티를 사용하면 요소 안의 HTML을 문자열 형태로 받아올 수 있습니다, 덮어쓰기도 가능
+(innerHTML.body시 body안의 모든 글자를 가져옴)
+근데 innerHTML은 div를 수정하지만 outerHTML은 div를 수정하지 않습니다.(alert해보면 앎)
+innerHTML은 요소노드에만 사용, nodeValue/data는 다른 타입의 노드도
+
+textContent로 순수한 텍스트만, 사용자가 입력한 문자를 안전한 방법으로 처리
+
+hidden은 기술적으로 style="display:none"와 동일합니다. 짧다는 점만 다르죠.
+
+tagName은 항상 대문자
+-->
