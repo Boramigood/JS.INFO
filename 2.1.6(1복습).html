@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div data-widget-name="menu">Choose the genre</div>
+    <!--비표준 속성이 있음-->
+
+    <script>
+      const div = document.querySelector('[data-widget-name]'); //비표준 속성의 요소를 가져올 때는 []씀, class에. id에#쓰는 것 처럼
+      //div는 div를 가져옴, 이제 menu를 alert해야함
+
+      alert(div.getAttribute('data-widget-name'));
+      //
+      //
+      //data-widget-name은 비표준 속성이라 다음과 같은 방법도 가능
+      alert(div.dataset.widgetName);
+      //'elem.dataset.about을 사용해 그 값을 얻을 수 있죠.'
+    </script>
+  </body>
+</html>
