@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const ul = document.createElement('ul');
+
+      document.body.append(ul); //ul은 실제로 만들어짐
+      ul.innerText = '리스트 목록';
+
+      while (true) {
+        const list = prompt('리스트 내용을 입력하시오', '');
+        if (list === null) break;
+        const li = document.createElement('li');
+        li.innerText = list;
+        ul.append(li);
+      }
+    </script>
+  </body>
+</html>
