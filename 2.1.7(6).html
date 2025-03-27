@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        Animals
+        <ul>
+          <li>
+            Mammals
+            <ul>
+              <li>Cows</li>
+              <li>Donkeys</li>
+              <li>Dogs</li>
+              <li>Tigers</li>
+            </ul>
+          </li>
+          <li>
+            Other
+            <ul>
+              <li>Snakes</li>
+              <li>Birds</li>
+              <li>Lizards</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Fishes
+        <ul>
+          <li>
+            Aquarium
+            <ul>
+              <li>Guppy</li>
+              <li>Angelfish</li>
+            </ul>
+          </li>
+          <li>
+            Sea
+            <ul>
+              <li>Sea trout</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <script>
+      let lis = document.getElementsByTagName('li'); //모든 li들을 전부 가져옴
+
+      for (let li of lis) {
+        // 이 <lis> 의 모든 하위 <li> 의 개수를 얻어옵니다.
+        let descendantsCount = li.getElementsByTagName('li').length;
+        if (!descendantsCount) continue; //자손이 없으면 넘기게
+
+        // 텍스트 노드에 위의 내용을 직접 추가합니다.
+        li.firstChild.data += ' [' + descendantsCount + ']'; // li.firstChild.data = li.firstChild.data + ' [' + descendantsCount + ']'
+        //Animals에 Animals [9] 할당함
+        //data로 Animals에 접근할 수 있는가
+      }
+    </script>
+  </body>
+</html>
+<!--  -->
